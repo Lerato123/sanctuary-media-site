@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================================================
+    PAGE TITLE — change to match final brand name / tagline
+  ============================================================ -->
+  <title>Sanctuary Media | Visual Storytelling</title>
+
+  <!-- Favicon — replace with actual favicon path -->
+  <!-- <link rel="icon" href="assets/images/favicon.ico" /> -->
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+    CUSTOM CURSOR
+    Remove the two divs below + cursor JS in script.js if you
+    want the default browser cursor back
+  ============================================================ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+
+  <!-- ============================================================
+    NAVIGATION
+  ============================================================ -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">
+      <!-- Option 1: Use the logo image (recommended) -->
+      <img
+        src="assets/images/logo-dark-removebg-preview.png"
+        alt="Sanctuary Media"
+        class="nav-logo-img"
+      />
+      <!-- Option 2: Text fallback if no logo image
+      <span>SANCTUARY<em>.MEDIA</em></span>
+      -->
+    </a>
+
+    <!-- Hamburger for mobile — toggled via JS -->
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <!-- Uncomment when team section is enabled -->
+      <!-- <li><a href="#team">Team</a></li> -->
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-cta">Book a Shoot</a>
+  </nav>
+
+
+  <!-- ============================================================
+    HERO SECTION
+    - Replace background image in style.css under #hero .hero-bg
+    - Update headline and subtext to match Njabulo's brand voice
+  ============================================================ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+
+    <!-- Optional: dark overlay grain texture for atmosphere -->
+    <div class="hero-grain"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">Johannesburg · South Africa</div>
+
+      <h1 class="hero-title">
+        Where Vision<br />
+        <em>Becomes Story</em>
+      </h1>
+
+      <p class="hero-sub">
+        <!-- PLACEHOLDER: Update with Njabulo's own brand statement -->
+        Sanctuary Media crafts visual stories that move people —
+        photography and media production rooted in emotion,
+        culture, and cinematic precision.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn-primary">View Portfolio</a>
+        <a href="#about" class="btn-ghost">Our Story</a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+    PORTFOLIO SECTION
+    TABS: All | Portraits | Weddings | Maternity | Events |
+          Commercial | Fashion
+    - Add/remove tabs as needed
+    - Comment out entire tab-btn + gallery div for unused categories
+    - Replace all placeholder image src URLs with real ones
+  ============================================================ -->
+  <section id="portfolio">
+    <div class="portfolio-header reveal">
+      <div class="portfolio-header-left">
+        <div class="section-label">Work</div>
+        <h2 class="section-title">Selected <em>Portfolio</em></h2>
+      </div>
+      <p class="portfolio-desc">
+        <!-- PLACEHOLDER: tagline for portfolio section -->
+        Every frame is intentional. Every image, a feeling preserved.
+      </p>
+    </div>
+
+    <!-- ── CATEGORY TABS ── -->
+    <div class="tabs reveal">
+      <button class="tab-btn active" data-tab="all">All Work</button>
+      <button class="tab-btn" data-tab="portraits">Portraits</button>
+      <button class="tab-btn" data-tab="weddings">Weddings</button>
+      <button class="tab-btn" data-tab="maternity">Maternity</button>
+      <button class="tab-btn" data-tab="events">Events</button>
+      <button class="tab-btn" data-tab="commercial">Commercial</button>
+      <button class="tab-btn" data-tab="fashion">Fashion</button>
+    </div>
+
+    <!-- ── ALL WORK ──
+      Add/remove .gallery-item blocks freely.
+      data-src = full-size image for lightbox
+      src      = smaller/compressed version for grid
+      data-caption = text shown on hover and in lightbox
+    -->
+    <div class="gallery gallery-masonry active" id="tab-all">
+
+      <div class="gallery-item"
+        data-src="assets/images/Portrait/portr-1.jpg"
+        data-caption="Portrait — Natural Light">
+        <img src="assets/images/Portrait/portr-1.jpg" alt="Portrait natural light" />
+        <div class="gallery-overlay"><span class="gallery-caption">Portrait</span></div>
+        <!-- <div class="gallery-zoom">zoom icon injected by JS</div> -->
+      </div>
+
+      <div class="gallery-item"
+        data-src="assets/images/Portrait/portr-2.jpg"
+        data-caption="Wedding — The Kiss">
+        <img src="assets/images/Portrait/portr-2.jpg" alt="Wedding kiss" />
+        <div class="gallery-overlay"><span class="gallery-caption">Wedding</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+
+      <div class="gallery-item"
+       data-caption="Maternity — Golden Hour">
+        <img src="assets/images/Maternity/maternity-1.jpg" alt="Maternity golden hour" />
+        <div class="gallery-overlay"><span class="gallery-caption">Maternity</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+
+      <div class="gallery-item"
+        data-src="assets/images/weddings/Lebo-wed-2.png"
+        data-caption="Corporate — Executive Portrait">
+        <img src="assets/images/weddings/Lebo-wed-2.png" alt="Corporate portrait" />
+        <div class="gallery-overlay"><span class="gallery-caption">Corporate</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+
+      <div class="gallery-item"
+        data-src="assets\images\Fashion\fashion-1.jpg"
+        data-caption="Fashion — Editorial">
+        <img src="assets\images\Fashion\fashion-1.jpg" />
+        <div class="gallery-overlay"><span class="gallery-caption">Fashion</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+
+      <div class="gallery-item"
+        data-src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=90"
+        data-caption="Events — Live Atmosphere">
+        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80" alt="Event photography" />
+        <div class="gallery-overlay"><span class="gallery-caption">Events</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+
+      <div class="gallery-item"
+        data-src="assets/images/weddings/Lebo-wed-8.jpeg"
+        data-caption="Portrait — Studio">
+        <img src="assets/images/weddings/Lebo-wed-8.jpeg" alt="Studio portrait" />
+        <div class="gallery-overlay"><span class="gallery-caption">Studio Portrait</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+
+      <div class="gallery-item"
+        data-src="assets/images/weddings/Lebo-wed-9.jpeg "
+        data-caption="Wedding — First Dance">
+        <img src="assets/images/weddings/Lebo-wed-9.jpeg" alt="Wedding first dance" />
+        <div class="gallery-overlay"><span class="gallery-caption">Wedding</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+
+      <div class="gallery-item"
+        data-src="assets/images/Fashion/fashion-5.jpg"
+        data-caption="Fashion — High Concept">
+        <img src="assets/images/Fashion/fashion-5.jpg" alt="Fashion high concept" />
+        <div class="gallery-overlay"><span class="gallery-caption">Fashion</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+
+    </div><!-- /tab-all -->
+
+
+    <!-- ── PORTRAITS ── -->
+    <div class="gallery gallery-masonry" id="tab-portraits">
+      <div class="gallery-item" data-src="assets/images/Portrait/portr-1.jpg" data-caption="Natural Light Portrait">
+        <img src="assets/images/Portrait/portr-1.jpg" alt="Portrait" />
+        <div class="gallery-overlay"><span class="gallery-caption">Natural Light</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <div class="gallery-item"
+        data-src="assets/images/Portrait/portr-2.jpg"
+        data-caption="Studio Portrait">
+        <img src="assets/images/Portrait/portr-2.jpg" alt="Studio portrait" />
+        <div class="gallery-overlay"><span class="gallery-caption">Studio</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <div class="gallery-item"
+        data-src="assets/images/Portrait/portr-3.jpg"
+        data-caption="Studio Portrait">
+        <img src="assets/images/Portrait/portr-3.jpg" alt="Studio portrait" />
+        <div class="gallery-overlay"><span class="gallery-caption">Studio</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <!-- ADD MORE PORTRAIT ITEMS HERE -->
+    </div>
+
+
+    <!-- ── WEDDINGS ── -->
+    <div class="gallery gallery-masonry" id="tab-weddings">
+      <div class="gallery-item"
+        data-src="assets\images\Weddings\Lebo-wed-1.png"
+        data-caption="The Kiss">
+        <img src="assets\images\Weddings\Lebo-wed-1.png" alt="Wedding" />
+        <div class="gallery-overlay"><span class="gallery-caption">The Kiss</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <div class="gallery-item"
+        data-src="assets\images\Weddings\Lebo-wed-2.png"
+        data-caption="First Dance">
+        <img src="assets\images\Weddings\Lebo-wed-2.png" alt="Wedding first dance" />
+        <div class="gallery-overlay"><span class="gallery-caption">First Dance</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <div class="gallery-item"
+        data-src="assets\images\Weddings\Lebo-wed-3.png"
+        data-caption="First Dance">
+        <img src="assets\images\Weddings\Lebo-wed-3.png" alt="Wedding first dance" />
+        <div class="gallery-overlay"><span class="gallery-caption">First Dance</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <div class="gallery-item"
+        data-src="assets\images\Weddings\Lebo-wed-4.png"
+        data-caption="First Dance">
+        <img src="assets\images\Weddings\Lebo-wed-4.png" alt="Wedding first dance" />
+        <div class="gallery-overlay"><span class="gallery-caption">First Dance</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <div class="gallery-item"
+        data-src="assets\images\Weddings\Lebo-wed-5.png"
+        data-caption="First Dance">
+        <img src="assets\images\Weddings\Lebo-wed-5.png" alt="Wedding first dance" />
+        <div class="gallery-overlay"><span class="gallery-caption">First Dance</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <div class="gallery-item"
+        data-src="assets\images\Weddings\Lebo-wed-6.png"
+        data-caption="First Dance">
+        <img src="assets\images\Weddings\Lebo-wed-6.png" alt="Wedding first dance" />
+        <div class="gallery-overlay"><span class="gallery-caption">First Dance</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <div class="gallery-item"
+        data-src="assets\images\Weddings\Lebo-wed-7.png"
+        data-caption="First Dance">
+        <img src="assets\images\Weddings\Lebo-wed-7.png" alt="Wedding first dance" />
+        <div class="gallery-overlay"><span class="gallery-caption">First Dance</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <!-- ADD MORE WEDDING ITEMS HERE -->
+    </div>
+
+
+    <!-- ── MATERNITY ── -->
+    <div class="gallery gallery-masonry" id="tab-maternity">
+      <div class="gallery-item"
+        data-src="assets/images/Maternity/maternity-1.jpg"
+        data-caption="Golden Hour">
+        <img src="assets/images/Maternity/maternity-1.jpg" alt="Maternity" />
+        <div class="gallery-overlay"><span class="gallery-caption">Golden Hour</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <div class="gallery-item"
+        data-src="assets/images/Maternity/maternity-2.jpg"
+        data-caption="Golden Hour">
+        <img src="assets/images/Maternity/maternity-2.jpg" alt="Maternity" />
+        <div class="gallery-overlay"><span class="gallery-caption">Golden Hour</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <div class="gallery-item"
+        data-src="assets/images/Maternity/maternity-3.jpeg"
+        data-caption="Golden Hour">
+        <img src="assets/images/Maternity/maternity-3.jpeg" alt="Maternity" />
+        <div class="gallery-overlay"><span class="gallery-caption">Golden Hour</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <div class="gallery-item"
+        data-src="assets/images/Maternity/maternity-4.jpg"
+        data-caption="Golden Hour">
+        <img src="assets/images/Maternity/maternity-4.jpg" alt="Maternity" />
+        <div class="gallery-overlay"><span class="gallery-caption">Golden Hour</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <!-- ADD MORE MATERNITY ITEMS HERE -->
+    </div>
+
+
+    <!-- ── EVENTS ── -->
+    <div class="gallery gallery-masonry" id="tab-events">
+      <div class="gallery-item"
+        data-src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=90"
+        data-caption="Live Atmosphere">
+        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80" alt="Event" />
+        <div class="gallery-overlay"><span class="gallery-caption">Live Atmosphere</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <!-- ADD MORE EVENT ITEMS HERE -->
+    </div>
+
+
+    <!-- ── COMMERCIAL ── -->
+    <div class="gallery gallery-masonry" id="tab-commercial">
+      <div class="gallery-item"
+        data-src="assets\images\Commercial\commercial-1.png"
+        data-caption="Executive Portrait">
+        <img src="assets\images\Commercial\commercial-1.png" />
+        <div class="gallery-overlay"><span class="gallery-caption">Executive</span></div>
+        <div class="gallery-zoom"></div>
+        
+      </div>
+      <!-- ADD MORE COMMERCIAL ITEMS HERE -->
+    </div>
+
+
+    <!-- ── FASHION ── -->
+    <div class="gallery gallery-masonry" id="tab-fashion">
+      <div class="gallery-item"
+        data-src="assets\images\Fashion\fashion-1.jpg"
+        data-caption="Editorial">
+        <img src="assets\images\Fashion\fashion-1.jpg" alt="Fashion" />
+        <div class="gallery-overlay"><span class="gallery-caption">Editorial</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <div class="gallery-item"
+        data-src="assets\images\Fashion\fashion-2.jpg"
+        data-caption="High Concept">
+        <img src="assets\images\Fashion\fashion-2.jpg" alt="Fashion" />
+        <div class="gallery-overlay"><span class="gallery-caption">High Concept</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <div class="gallery-item"
+        data-src="assets\images\Fashion\fashion-3.jpg"
+        data-caption="High Concept">
+        <img src="assets\images\Fashion\fashion-3.jpg" alt="Fashion" />
+        <div class="gallery-overlay"><span class="gallery-caption">High Concept</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <div class="gallery-item"
+      data-src="assets\images\Fashion\fashion-4.jpg"
+        data-caption="High Concept">
+        <img src="assets\images\Fashion\fashion-4.jpg" alt="Fashion" />
+        <div class="gallery-overlay"><span class="gallery-caption">High Concept</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <div class="gallery-item"
+        data-src="assets\images\Fashion\fashion-5.jpg"
+        data-caption="High Concept">
+        <img src="assets\images\Fashion\fashion-5.jpg" alt="Fashion" />
+        <div class="gallery-overlay"><span class="gallery-caption">High Concept</span></div>
+        <div class="gallery-zoom"></div>
+      </div>
+      <!-- ADD MORE FASHION ITEMS HERE -->
+    </div>
+
+  </section><!-- /portfolio -->
+
+
+  <!-- ============================================================
+    LIGHTBOX
+    Controlled entirely via script.js — do not remove IDs
+  ============================================================ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lbClose" aria-label="Close">Close ✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+    <img class="lightbox-img" id="lbImg" src="" alt="" />
+    <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next">&#8250;</button>
+    <span class="lightbox-caption" id="lbCaption"></span>
+    <span class="lightbox-counter" id="lbCounter"></span>
+  </div>
+
+
+  <!-- ============================================================
+    ABOUT SECTION
+    Replace placeholder text with Njabulo's actual bio
+  ============================================================ -->
+  <section id="about">
+    <div class="about-grid">
+
+      <div class="about-img-wrap reveal">
+        <!-- PLACEHOLDER: Replace with Njabulo's photo -->
+        <img
+          class="about-img"
+          src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800&q=80"
+          alt="Njabulo — Sanctuary Media"
+        />
+        <div class="about-img-accent"></div>
+        <div class="about-badge">
+          <span class="about-badge-num">1.5+</span>
+          <!-- PLACEHOLDER: Update years -->
+          <span class="about-badge-label">Years of<br />Experience</span>
+        </div>
+      </div>
+
+      <div class="about-text reveal reveal-delay-2">
+        <div class="section-label">About</div>
+        <h2 class="section-title">The Eye Behind <em>the Lens</em></h2>
+
+        <!-- PLACEHOLDER: Replace with Njabulo's actual quote / brand statement -->
+        <p class="about-quote">
+          "I don't just take photographs — I create the images people
+          keep on their walls for decades."
+        </p>
+
+        <!-- PLACEHOLDER: Replace with actual bio -->
+        <p class="about-body">
+          Njabulo is the creative force behind Sanctuary Media —
+          a Johannesburg-based photography and media production studio
+          dedicated to telling authentic visual stories. With a sharp
+          eye for light, emotion, and composition, Njabulo brings a
+          cinematic quality to every shoot.
+        </p>
+        <p class="about-body">
+          From intimate portraits to large-scale commercial campaigns,
+          Sanctuary Media delivers work that resonates — images that
+          don't just document moments, but define them.
+        </p>
+
+        <div class="about-stats">
+          <!-- PLACEHOLDER: Update all numbers -->
+          <div class="stat">
+            <span class="stat-num">200+</span>
+            <span class="stat-label">Shoots Completed</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">5+</span>
+            <span class="stat-label">Years Active</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">7</span>
+            <span class="stat-label">Specialities</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+    SERVICES SECTION
+    Add / remove / rename service cards as needed.
+    To remove a service: delete its entire <div class="service-card"> block
+  ============================================================ -->
+  <section id="services">
+    <div class="services-header reveal">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Photography <em>Services</em></h2>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <span class="service-num">01</span>
+        <h3 class="service-name">Portraits & Headshots</h3>
+        <p class="service-desc">
+          Personal, corporate, and LinkedIn portraits that capture
+          who you truly are — not just how you look.
+        </p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1">
+        <span class="service-num">02</span>
+        <h3 class="service-name">Weddings</h3>
+        <p class="service-desc">
+          <!-- PLACEHOLDER: Njabulo's wedding photography approach -->
+          Your day, every emotion, every glance — documented with
+          intention and delivered as a legacy.
+        </p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <span class="service-num">03</span>
+        <h3 class="service-name">Maternity & Newborn</h3>
+        <p class="service-desc">
+          The most fleeting moments of life, held still forever.
+          Studio and on-location options available.
+        </p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-3">
+        <span class="service-num">04</span>
+        <h3 class="service-name">Fashion & Editorial</h3>
+        <p class="service-desc">
+          Campaign shoots, lookbooks, and model portfolios crafted
+          to stand out in any market.
+        </p>
+      </div>
+
+      <div class="service-card reveal">
+        <span class="service-num">05</span>
+        <h3 class="service-name">Events</h3>
+        <p class="service-desc">
+          Conferences, concerts, private functions — candid and
+          directed coverage that captures atmosphere and energy.
+        </p>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1">
+        <span class="service-num">06</span>
+        <h3 class="service-name">Commercial & Brand</h3>
+        <p class="service-desc">
+          Product photography, brand campaigns, and corporate
+          imagery that communicates quality and vision.
+        </p>
+      </div>
+
+      <!-- PLACEHOLDER service card — uncomment and fill in when needed
+      <div class="service-card reveal reveal-delay-2">
+        <span class="service-num">07</span>
+        <h3 class="service-name">Service Name Here</h3>
+        <p class="service-desc">
+          Description of service goes here.
+        </p>
+      </div>
+      -->
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+    TEAM SECTION — COMMENTED OUT
+    Uncomment this entire block when the team is ready to be shown.
+    Replace placeholder names, roles, bios, and image src values.
+  ============================================================ -->
+
+  <section id="team">
+    <div class="team-header reveal">
+      <div class="section-label">The People</div>
+      <h2 class="section-title">Meet the <em>Team</em></h2>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="team-card reveal">
+        <div class="team-img-wrap">
+          <img
+            src="assets/images/Team/team-1.jpeg"
+            alt="Njabulo — Lead Photographer"
+            class="team-img"
+          />
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Njabulo</h3>
+          <span class="team-role">Lead Photographer & Creative Director</span>
+          <p class="team-bio">
+            PLACEHOLDER: Short bio about Njabulo — his style,
+            background, and what drives his work.
+          </p>
+        </div>
+      </div>
+
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-img-wrap">
+          <img
+            src="assets/images/Team/team-2.jpeg"
+            alt="Team Member Name"
+            class="team-img"
+          />
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Lerato</h3>
+          <span class="team-role">Developer</span>
+          <p class="team-bio">An Esteemed Developer with a passion for creating innovative solutions.</p>
+        </div>
+      </div>
+
+      <!-- <div class="team-card reveal reveal-delay-2">
+        <div class="team-img-wrap">
+          <img
+            src="PLACEHOLDER_TEAM_MEMBER_3.jpg"
+            alt="Team Member Name"
+            class="team-img"
+          />
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">PLACEHOLDER NAME</h3>
+          <span class="team-role">PLACEHOLDER ROLE</span>
+          <p class="team-bio">PLACEHOLDER BIO</p>
+        </div>
+      </div> -->
+
+    </div>
+  </section>
+
+  <!-- ============================================================  -->
+
+
+  <!-- ============================================================
+    CONTACT SECTION
+    Replace all PLACEHOLDER contact details
+  ============================================================ -->
+  <section id="contact">
+    <div class="contact-top reveal">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-title">Book Your <em>Shoot</em></h2>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Contact Info -->
+      <div class="contact-info reveal">
+        <div class="contact-info-item">
+          <span class="contact-info-label">Phone</span>
+          <!-- PLACEHOLDER: Replace with real number -->
+          <span class="contact-info-value">+27 67 201 0558</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">Email</span>
+          <!-- PLACEHOLDER: Replace with real email -->
+          <span class="contact-info-value">NjabuloM19997@gmail.com</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">Location</span>
+          <span class="contact-info-value">
+            135 The Gambia St, Jiyana, Thembisa, 1632
+            <br />
+            <small>Available nationally</small>
+          </span>
+        </div>
+
+        <!-- Social Links — replace # with real URLs -->
+        <div class="contact-socials">
+            <a href="https://www.instagram.com/sanctuary_mediasa?igsh=dmVuOHU5emh3dmZ1" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://wa.me/+27613925616?text=Hello%20I%20am%20interested%20in%20your%20photography services" target="_blank" rel="noopener noreferrer">whatsapp</a>
+          <!-- <a href="#" target="_blank" rel="noopener">LinkedIn</a> -->
+          <!-- <a href="#" target="_blank" rel="noopener">TikTok</a> -->
+        </div>
+      </div>
+
+      <!-- Booking Form -->
+      <!-- Booking Form -->
+<form class="contact-form reveal reveal-delay-1"
+      id="contactForm"
+      action="sendmail.php"
+      method="POST">
+
+  <div class="form-row">
+    <div class="form-group">
+      <label class="form-label" for="firstName">First Name</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        class="form-input"
+        placeholder="Your name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Your surname" required  />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label class="form-label" for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-input"
+        placeholder="your@email.com"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="phone">Phone</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        class="form-input"
+        placeholder="+27 00 000 0000"
+      />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="service">Type of Shoot</label>
+    <select
+      id="service"
+      name="service"
+      class="form-select form-input"
+      required
+    >
+      <option value="">Select a service...</option>
+      <option value="Portraits / Headshots">Portraits / Headshots</option>
+      <option value="Wedding">Wedding</option>
+      <option value="Maternity / Newborn">Maternity / Newborn</option>
+      <option value="Fashion / Editorial">Fashion / Editorial</option>
+      <option value="Events">Events</option>
+      <option value="Commercial / Brand">Commercial / Brand</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="date">Preferred Date</label>
+    <input
+      type="date"
+      id="date"
+      name="date"
+      class="form-input"
+    />
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="message">Message</label>
+    <textarea
+      id="message"
+      name="message"
+      class="form-textarea form-input"
+      placeholder="Tell us about your vision..."
+    ></textarea>
+  </div>
+
+  <button type="submit" class="btn-primary form-submit">
+    Send Enquiry
+  </button>
+
+  <!-- Form success message -->
+  <p class="form-success" id="formSuccess">
+    ✓ Message sent! We'll be in touch soon.
+  </p>
+
+</form>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+    FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="footer-left">
+      <img
+        src="assets/images/logo-dark.jpeg"
+        alt="Sanctuary Media"
+        class="footer-logo-img"
+      />
+      <!-- Text fallback:
+      <span class="footer-logo-text">SANCTUARY<em>.MEDIA</em></span>
+      -->
+    </div>
+
+    <p class="footer-copy">
+      <!-- PLACEHOLDER: Update year automatically via JS or manually -->
+      &copy; <span id="footerYear"></span> Sanctuary Media. All rights reserved.
+    </p>
+
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/sanctuary_mediasa?igsh=dmVuOHU5emh3dmZ1" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://wa.me/+27613925616?text=Hello%20I%20am%20interested%20in%20your%20photography services" target="_blank" rel="noopener noreferrer">whatsapp</a>
+      <!-- <a href="#" target="_blank" rel="noopener">LinkedIn</a> -->
+    </div>
+  </footer>
+
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>
