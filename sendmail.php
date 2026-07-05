@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $date = htmlspecialchars($_POST['date']);
     $message = htmlspecialchars($_POST['message']);
 
-    $to = " NjabuloM19997@gmail.com";
+    $to = " leratonxumalo02@gmail.com";
     $subject = "New Photography Booking";
 
     $body = "
